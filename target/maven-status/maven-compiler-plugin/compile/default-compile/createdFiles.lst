@@ -1,3 +1,5 @@
-cloudapp\Application.class
 cloudapp\controller\Greeting.class
+cloudapp\jpa\GreetingRepository.class
+cloudapp\Application.class
+cloudapp\service\GreetingService.class
 cloudapp\controller\GreetingController.class
