@@ -1,3 +1,3 @@
-hello\Application.class
-hello\Greeting.class
-hello\GreetingController.class
+cloudapp\Application.class
+cloudapp\controller\Greeting.class
+cloudapp\controller\GreetingController.class
