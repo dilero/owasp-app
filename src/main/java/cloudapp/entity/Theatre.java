@@ -19,22 +19,18 @@ public class Theatre {
     private Date firstPlay;
     private String genre;
 
-    private List<Integer> cast;
 
     public Theatre() {
 
     }
 
-    public Theatre(String newName, String newDescription,
-                   List<Integer> newCast) {
+    public Theatre(String newName, String newDescription) {
         this.name = newName;
         this.description = newDescription;
-        this.cast = newCast;// new LinkedList<Artist>();
     }
 
     public Theatre(String Name, String Description, Integer Perde,
-                   Integer Duration, Date Fistplay, String Genre,
-                   List<Integer> castlist) {
+                   Integer Duration, Date Fistplay, String Genre) {
 
         this.setName(Name);
         this.setDescription(Description);
@@ -42,7 +38,6 @@ public class Theatre {
         this.setDuration(Duration);
         this.setFirstPlay(Fistplay);
         this.setGenre(Genre);
-        this.setCast(castlist);
 
     }
 
@@ -62,22 +57,10 @@ public class Theatre {
         return this.description;
     }
 
-    public void addPeopleToCast(Integer newArtist) {
-        this.cast.add(newArtist);
-    }
-
-    public List<Integer> getCast() {
-        return cast;
-    }
-
-    public void setCast(List<Integer> cast) {
-        this.cast = cast;
-    }
-
     public long getId() {
         return id;
     }
-    
+
     public Date getFirstPlay() {
         return firstPlay;
     }
