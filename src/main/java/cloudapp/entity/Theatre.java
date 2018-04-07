@@ -5,7 +5,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.util.Date;
-import java.util.List;
 
 @Entity
 public class Theatre {
@@ -16,7 +15,7 @@ public class Theatre {
     private String description;
     private Integer perde;
     private Integer duration;
-    private Date firstPlay;
+    private Date firstplay;
     private String genre;
 
 
@@ -36,7 +35,7 @@ public class Theatre {
         this.setDescription(Description);
         this.setPerde(Perde);
         this.setDuration(Duration);
-        this.setFirstPlay(Fistplay);
+        this.setFirstplay(Fistplay);
         this.setGenre(Genre);
 
     }
@@ -61,12 +60,12 @@ public class Theatre {
         return id;
     }
 
-    public Date getFirstPlay() {
-        return firstPlay;
+    public Date getFirstplay() {
+        return firstplay;
     }
 
-    public void setFirstPlay(Date firstPlay) {
-        this.firstPlay = firstPlay;
+    public void setFirstplay(Date firstplay) {
+        this.firstplay = firstplay;
     }
 
     public Integer getPerde() {
