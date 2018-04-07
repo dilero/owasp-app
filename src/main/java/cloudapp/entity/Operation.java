@@ -18,8 +18,8 @@ public class Operation {
     private String threadName;
     private String userName;
     private long time; //duration
-    private float currentThreadCpuRateAmongsLiveHttpThreads;
-    private float currentThreadCpuRateSince;
+    private double currentThreadCpuRateAmongsLiveHttpThreads;
+    private double currentThreadCpuRateSince;
     private OperationType operationType;
     private OperationBase operationBase;
     private Date operationTime;
@@ -58,19 +58,19 @@ public class Operation {
         this.time = time;
     }
 
-    public float getCurrentThreadCpuRateAmongsLiveHttpThreads() {
+    public double getCurrentThreadCpuRateAmongsLiveHttpThreads() {
         return currentThreadCpuRateAmongsLiveHttpThreads;
     }
 
-    public void setCurrentThreadCpuRateAmongsLiveHttpThreads(float currentThreadCpuRateAmongsLiveHttpThreads) {
+    public void setCurrentThreadCpuRateAmongsLiveHttpThreads(double currentThreadCpuRateAmongsLiveHttpThreads) {
         this.currentThreadCpuRateAmongsLiveHttpThreads = currentThreadCpuRateAmongsLiveHttpThreads;
     }
 
-    public float getCurrentThreadCpuRateSince() {
+    public double getCurrentThreadCpuRateSince() {
         return currentThreadCpuRateSince;
     }
 
-    public void setCurrentThreadCpuRateSince(float currentThreadCpuRateSince) {
+    public void setCurrentThreadCpuRateSince(double currentThreadCpuRateSince) {
         this.currentThreadCpuRateSince = currentThreadCpuRateSince;
     }
 

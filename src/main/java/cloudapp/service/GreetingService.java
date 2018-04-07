@@ -1,7 +1,7 @@
 package cloudapp.service;
 
 import cloudapp.entity.Book;
-import cloudapp.jpa.GreetingRepository;
+import cloudapp.jpa.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 public class GreetingService {
 
     @Autowired
-    private GreetingRepository greetingRepository;
+    private BookRepository greetingRepository;
 
     public Book save(Book book) {
         return greetingRepository.save(book);

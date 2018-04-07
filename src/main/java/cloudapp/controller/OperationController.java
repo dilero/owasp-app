@@ -1,35 +1,28 @@
 package cloudapp.controller;
 
 import cloudapp.entity.Book;
-import cloudapp.service.GreetingService;
+import cloudapp.entity.Operation;
+import cloudapp.entity.OperationType;
+import cloudapp.service.OperationService;
+import cloudapp.utils.OperationParser;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
 @RestController
-public class GreetingController {
+public class OperationController {
 
     @Autowired
-    private GreetingService greetingService;
+    private OperationService operationService;
 
-    private static final String template = "Hello, %s!";
-    private final AtomicLong counter = new AtomicLong();
 
-    @RequestMapping("/greeting")
-    public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
-        return new Greeting(counter.incrementAndGet(),
-                String.format(template, name));
-    }
-
-    @PostMapping("/add")
-    public Book save(@RequestBody Book book) {
-        return greetingService.save(book);
+    @RequestMapping("/operation")
+    public void greeting(@RequestParam(value = "types") String types) {
+        List<OperationType> operationList = OperationParser.getOperationList(types);
 
     }
+
 
 }

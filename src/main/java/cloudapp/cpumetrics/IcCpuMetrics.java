@@ -1,4 +1,4 @@
-package cloudapp;
+package cloudapp.cpumetrics;
 
 
 import java.lang.management.ManagementFactory;
