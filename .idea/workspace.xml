@@ -2,45 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4472d88b-35c0-4eb8-a246-756b791bed8f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/blooming-crag-47655.iml" afterPath="$PROJECT_DIR$/.idea/modules/blooming-crag-47655.iml" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/blooming-crag-47655_main.iml" afterPath="$PROJECT_DIR$/.idea/modules/blooming-crag-47655_main.iml" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/blooming-crag-47655_test.iml" afterPath="$PROJECT_DIR$/.idea/modules/blooming-crag-47655_test.iml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cloudapp/Application.java" afterPath="$PROJECT_DIR$/src/main/java/cloudapp/Application.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cloudapp/controller/OperationController.java" afterPath="$PROJECT_DIR$/src/main/java/cloudapp/controller/OperationController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cloudapp/entity/Operation.java" afterPath="$PROJECT_DIR$/src/main/java/cloudapp/entity/Operation.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cloudapp/entity/Theatre.java" afterPath="$PROJECT_DIR$/src/main/java/cloudapp/entity/Theatre.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cloudapp/jpa/BookRepository.java" afterPath="$PROJECT_DIR$/src/main/java/cloudapp/jpa/BookRepository.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cloudapp/jpa/OperationRepository.java" afterPath="$PROJECT_DIR$/src/main/java/cloudapp/jpa/OperationRepository.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cloudapp/jpa/TheatreRepository.java" afterPath="$PROJECT_DIR$/src/main/java/cloudapp/jpa/TheatreRepository.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cloudapp/service/OperationService.java" afterPath="$PROJECT_DIR$/src/main/java/cloudapp/service/OperationService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application-db.properties" afterPath="$PROJECT_DIR$/src/main/resources/application-db.properties" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/theatre.sql" afterPath="$PROJECT_DIR$/src/main/resources/theatre.sql" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application-db.properties" afterPath="$PROJECT_DIR$/target/classes/application-db.properties" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cloudapp/Application.class" afterPath="$PROJECT_DIR$/target/classes/cloudapp/Application.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cloudapp/controller/Greeting.class" afterPath="$PROJECT_DIR$/target/classes/cloudapp/controller/Greeting.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cloudapp/controller/GreetingController.class" afterPath="$PROJECT_DIR$/target/classes/cloudapp/controller/GreetingController.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cloudapp/controller/OperationController.class" afterPath="$PROJECT_DIR$/target/classes/cloudapp/controller/OperationController.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cloudapp/cpumetrics/IcCpuMetrics.class" afterPath="$PROJECT_DIR$/target/classes/cloudapp/cpumetrics/IcCpuMetrics.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cloudapp/entity/Book.class" afterPath="$PROJECT_DIR$/target/classes/cloudapp/entity/Book.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cloudapp/entity/ClassLabel.class" afterPath="$PROJECT_DIR$/target/classes/cloudapp/entity/ClassLabel.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cloudapp/entity/Operation.class" afterPath="$PROJECT_DIR$/target/classes/cloudapp/entity/Operation.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cloudapp/entity/OperationBase.class" afterPath="$PROJECT_DIR$/target/classes/cloudapp/entity/OperationBase.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cloudapp/entity/OperationType.class" afterPath="$PROJECT_DIR$/target/classes/cloudapp/entity/OperationType.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cloudapp/entity/Theatre.class" afterPath="$PROJECT_DIR$/target/classes/cloudapp/entity/Theatre.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cloudapp/jpa/BookRepository.class" afterPath="$PROJECT_DIR$/target/classes/cloudapp/jpa/BookRepository.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cloudapp/jpa/OperationRepository.class" afterPath="$PROJECT_DIR$/target/classes/cloudapp/jpa/OperationRepository.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cloudapp/jpa/TheatreRepository.class" afterPath="$PROJECT_DIR$/target/classes/cloudapp/jpa/TheatreRepository.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cloudapp/service/GreetingService.class" afterPath="$PROJECT_DIR$/target/classes/cloudapp/service/GreetingService.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cloudapp/service/OperationService$1.class" afterPath="$PROJECT_DIR$/target/classes/cloudapp/service/OperationService$1.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cloudapp/service/OperationService.class" afterPath="$PROJECT_DIR$/target/classes/cloudapp/service/OperationService.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cloudapp/utils/OperationParser.class" afterPath="$PROJECT_DIR$/target/classes/cloudapp/utils/OperationParser.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/theatre.sql" afterPath="$PROJECT_DIR$/target/classes/theatre.sql" />
-      <change beforePath="$PROJECT_DIR$/target/gs-rest-service-0.1.0.jar" afterPath="$PROJECT_DIR$/target/gs-rest-service-0.1.0.jar" />
-      <change beforePath="$PROJECT_DIR$/target/gs-rest-service-0.1.0.jar.original" afterPath="$PROJECT_DIR$/target/gs-rest-service-0.1.0.jar.original" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -939,7 +901,7 @@
       <workItem from="1522865248540" duration="1109000" />
       <workItem from="1523105462959" duration="7784000" />
       <workItem from="1523116421907" duration="7196000" />
-      <workItem from="1523188943170" duration="2712000" />
+      <workItem from="1523188943170" duration="4148000" />
     </task>
     <servers />
   </component>
@@ -955,7 +917,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20267000" />
+    <option name="totallyTimeSpent" value="21703000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
