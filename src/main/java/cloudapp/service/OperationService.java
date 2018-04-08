@@ -17,7 +17,6 @@ import java.util.List;
 /**
  * Created by z003k81p on 4/4/2018.
  */
-@Transactional
 @Service
 public class OperationService {
 
@@ -30,7 +29,7 @@ public class OperationService {
         long startTime = System.nanoTime();
         Operation operation = new Operation();
         operation.setRequestedOperations(types);
-        operation.setOperationTime(new Date());
+        operation.setOperationTime(new Date().getTime());
         operation.setOperationType(operationType);
         operation.setThreadName(Thread.currentThread().getName());
         operation = cpuCalculor(operation);
@@ -38,9 +37,10 @@ public class OperationService {
         try {
             actOperation(operationType, operation);
         } catch (Exception e) {
-
+            System.out.println(e.getMessage());
         }
 
+        operation = cpuCalculor(operation);
         long endTime = System.nanoTime();
         long totalTime = endTime - startTime;
         operation.setTime(totalTime);
@@ -57,7 +57,6 @@ public class OperationService {
                 operation.setOperationBase(OperationBase.ADD);
                 newTheatre = TheatreUtil.getRandomTheatre();
                 theatreRepository.save(newTheatre);
-                operation = cpuCalculor(operation);
                 break;
 
 
@@ -66,15 +65,13 @@ public class OperationService {
                 operation.setOperationBase(OperationBase.ADD);
                 newTheatre = TheatreUtil.getRandomMalTheatre();
                 theatreRepository.save(newTheatre);
-                operation = cpuCalculor(operation);
                 break;
 
 
             case REG_READ:
                 operation.setClassLabel(ClassLabel.REGULAR);
                 operation.setOperationBase(OperationBase.READ);
-                theatreRepository.findByName("The Shawshank Redemption");
-                operation = cpuCalculor(operation);
+                theatreRepository.findByName("Diary of a Madman");
                 break;
 
 
@@ -82,7 +79,6 @@ public class OperationService {
                 operation.setClassLabel(ClassLabel.MALICIOUS);
                 operation.setOperationBase(OperationBase.READ);
                 theatreRepository.findByName(TheatreConstants.malSample1);
-                operation = cpuCalculor(operation);
                 break;
 
             case REG_UPDATE:
@@ -95,7 +91,6 @@ public class OperationService {
                     theatreRepository.save(theatre);
 
                 }
-                operation = cpuCalculor(operation);
                 break;
 
             case MAL_UPDATE:
@@ -108,7 +103,6 @@ public class OperationService {
                     theatreRepository.save(theatre);
 
                 }
-                operation = cpuCalculor(operation);
                 break;
             case REG_DELETE:
                 operation.setClassLabel(ClassLabel.REGULAR);
@@ -116,9 +110,8 @@ public class OperationService {
                 all = theatreRepository.findAll();
                 if (all.size() > 0) {
                     Theatre theatre = all.get(0);
-                    theatreRepository.delete(theatre.getId());
+                    theatreRepository.deleteById(theatre.getId());
                 }
-                operation = cpuCalculor(operation);
                 break;
 
             case MAL_DELETE:
@@ -132,7 +125,6 @@ public class OperationService {
                 for (int i = 0; i < 10; i++) {
                     theatreRepository.save(TheatreUtil.getRandomTheatre());
                 }
-                operation = cpuCalculor(operation);
                 break;
 
 

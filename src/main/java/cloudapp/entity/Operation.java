@@ -1,9 +1,6 @@
 package cloudapp.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 /**
@@ -20,11 +17,14 @@ public class Operation {
     private long time; //duration
     private double currentThreadCpuRateAmongsLiveHttpThreads;
     private double currentThreadCpuRateSince;
-    private OperationType operationType;
-    private OperationBase operationBase;
-    private Date operationTime;
-    private ClassLabel classLabel;
+    private long operationTime;
     private String requestedOperations;
+    @Enumerated(EnumType.STRING)
+    private OperationType operationType;
+    @Enumerated(EnumType.STRING)
+    private OperationBase operationBase;
+    @Enumerated(EnumType.STRING)
+    private ClassLabel classLabel;
 
     public long getId() {
         return id;
@@ -90,11 +90,11 @@ public class Operation {
         this.operationBase = operationBase;
     }
 
-    public Date getOperationTime() {
+    public long getOperationTime() {
         return operationTime;
     }
 
-    public void setOperationTime(Date operationTime) {
+    public void setOperationTime(long operationTime) {
         this.operationTime = operationTime;
     }
 

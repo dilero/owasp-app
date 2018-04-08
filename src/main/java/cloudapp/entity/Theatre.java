@@ -40,32 +40,20 @@ public class Theatre {
 
     }
 
-    public void setName(String newName) {
-        this.name = newName;
-    }
-
     public String getName() {
-        return this.name;
+        return name;
     }
 
-    public void setDescription(String newDescription) {
-        this.description = newDescription;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getDescription() {
-        return this.description;
+        return description;
     }
 
-    public long getId() {
-        return id;
-    }
-
-    public Date getFirstplay() {
-        return firstplay;
-    }
-
-    public void setFirstplay(Date firstplay) {
-        this.firstplay = firstplay;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Integer getPerde() {
@@ -84,6 +72,14 @@ public class Theatre {
         this.duration = duration;
     }
 
+    public Date getFirstplay() {
+        return firstplay;
+    }
+
+    public void setFirstplay(Date firstplay) {
+        this.firstplay = firstplay;
+    }
+
     public String getGenre() {
         return genre;
     }
@@ -92,4 +88,7 @@ public class Theatre {
         this.genre = genre;
     }
 
+    public Long getId() {
+        return id;
+    }
 }

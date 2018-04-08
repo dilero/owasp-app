@@ -1,3 +1,11 @@
-INSERT INTO THEATRE (NAME,PERDE,DURATION,GENRE,FIRSTPLAY,DESCRIPTION) VALUES ("Diary of a Madman", 1, 100,"Drama",-220932000000,"Diary of a Madman is a farcical short story by Nikolai Gogol. Along with The Overcoat and The Nose, Diary of a Madman is considered to be one of Gogol's greatest short stories.");
-INSERT INTO THEATRE (NAME,PERDE,DURATION,GENRE,FIRSTPLAY,DESCRIPTION) VALUES ("Zengin Mutfa��", 2, 130,"Epik",220917600000," Vas�f �ng�ren'in 1977'de yazd��� tiyatro eseridir. Eser, epik tiyatronun T�rkiye'deki �nemli �rneklerinden biri kabul edilir. Oyunda, 1970 y�l�nda, T�rkiye'de b�y�k bir i��i eylemi olan 15-16 Haziran Olaylar� s�ras�nda bir kona��n mutfa��nda geli�en olaylar anlat�l�r. Oyunun mekan� olan 'zengin mutfa��'nda a���l�k yapan iyi niyetli L�tf� Pehlivan, s�n�f bilincine sahip olmayan ve �evresinde geli�en olaylara g�re kendini konumland�rmaya �al��an silik bir karakterdir. Oyunda L�tf� Pehlivan karakterinin ge�irdi�i de�i�im g�zler �n�ne serilir.");
-INSERT INTO THEATRE (NAME,PERDE,DURATION,GENRE,FIRSTPLAY,DESCRIPTION) VALUES ("12 �fkeli Adam", 2, 110,"Polisiye",-631159200000,"On �ki �fkeli Adam 1950 y�l�nda ilk olarak �stanbul �ehir Tiyatrolar� taraf�ndan sahnelemi� oldu�u oyun 22 Ekim 2014 tarihinde yeniden sahnemi�tir. �nl� ingiliz yazar Reginald Rose kaleme ald��� �evirisini Cemal Berk yapt��� rejis�rl���n� Arif Akkaya yapt��� tiyatro oyunudur.");
+INSERT INTO THEATRE (ID, NAME,PERDE,DURATION,GENRE,DESCRIPTION) VALUES (1,'Diary of a Madman', 1, 100,'Drama','Diary of a Madman is a farcical short story by Nikolai Gogol. Along with The Overcoat and The Nose, Diary of a Madman is considered to be one of GogolWs greatest short stories.');
+INSERT INTO THEATRE (ID, NAME,PERDE,DURATION,GENRE,DESCRIPTION) VALUES (2, 'Zengin Mutfagi', 2, 130,'Epik',
+'not genuine, correct, or comprehensible Latin anymore. While lorem ipsum''s still resembles classical Latin, it actually has no meaning whatsoever. As Cicero''s text doesn''t contain the letters K, W, or Z, alien to latin, these, and others are often inserted randomly to mimic the typographic appearence of European languages, as are digraphs not to be found in the original.
+');
+INSERT INTO THEATRE (ID, NAME,PERDE,DURATION,GENRE,DESCRIPTION) VALUES (3, '12 Ofkeli Adam', 2, 110, 'Polisiye',
+'not genuine, correct, or comprehensible Latin anymore. While lorem ipsum''s still resembles classical Latin, it actually has no meaning whatsoever. As Cicero''s text doesn''t contain the letters K, W, or Z, alien to latin, these, and others are often inserted randomly to mimic the typographic appearence of European languages, as are digraphs not to be found in the original.
+');
+
+ALTER TABLE THEATRE ALTER COLUMN DESCRIPTION TYPE VARCHAR(1000);
+
+SELECT * FROM OPERATION;

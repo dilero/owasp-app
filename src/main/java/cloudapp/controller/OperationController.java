@@ -21,6 +21,9 @@ public class OperationController {
     @RequestMapping("/operation")
     public void greeting(@RequestParam(value = "types") String types) {
         List<OperationType> operationList = OperationParser.getOperationList(types);
+        for (OperationType operationType : operationList) {
+            operationService.save(types, operationType);
+        }
 
     }
 
