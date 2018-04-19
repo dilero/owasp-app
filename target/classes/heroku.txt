@@ -1,0 +1,4 @@
+heroku login
+heroku open
+heroku logs -t
+heroku pg:psql

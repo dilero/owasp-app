@@ -17,8 +17,12 @@ public class Operation {
     private long time; //duration
     private double currentThreadCpuRateAmongsLiveHttpThreads;
     private double currentThreadCpuRateSince;
+    private long startTime;
+    private long endTime;
     private long operationTime;
     private String requestedOperations;
+    @Enumerated(EnumType.STRING)
+    private OperationType vulnerabilityName;
     @Enumerated(EnumType.STRING)
     private OperationType operationType;
     @Enumerated(EnumType.STRING)
@@ -112,5 +116,29 @@ public class Operation {
 
     public void setRequestedOperations(String requestedOperations) {
         this.requestedOperations = requestedOperations;
+    }
+
+    public long getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(long startTime) {
+        this.startTime = startTime;
+    }
+
+    public long getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(long endTime) {
+        this.endTime = endTime;
+    }
+
+    public OperationType getVulnerabilityName() {
+        return vulnerabilityName;
+    }
+
+    public void setVulnerabilityName(OperationType vulnerabilityName) {
+        this.vulnerabilityName = vulnerabilityName;
     }
 }

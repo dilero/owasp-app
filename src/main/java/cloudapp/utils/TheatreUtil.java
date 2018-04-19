@@ -7,6 +7,9 @@ import java.util.Date;
 import java.util.List;
 
 public final class TheatreUtil {
+    public static final String ANY_NAME = "Diary of a Madman";
+
+
     public static String getRandomDescription() {
         ArrayList<String> descriptionArray = new ArrayList<String>();
         descriptionArray.add(
@@ -20,7 +23,7 @@ public final class TheatreUtil {
         return description;
     }
 
-    public static String getRandomMalDescription() {
+    public static String getRandomLongDescription() {
         getRandomDescription();
 
         ArrayList<String> descriptionArray = new ArrayList<String>();

@@ -1,3 +1,4 @@
 # Gradle:
 .idea/gradle.xml
+.idea/workspace.xml
 .idea/libraries
