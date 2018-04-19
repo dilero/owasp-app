@@ -37,33 +37,32 @@ public final class TheatreUtil {
 
     //
     public static Theatre getRandomTheatre() {
-        List<Theatre> theatreList = new ArrayList<Theatre>();
-        theatreList.add(new Theatre("The Shawshank Redemption",
-                "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
-                2, 142, new Date(1994, 10, 14), "Crime,Drama"));
-
-        theatreList.add(new Theatre("The Godfather",
-                "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
-                3, 175, new Date(1972, 3, 24), "Crime,Drama"));
-
-        theatreList.add(new Theatre("The Dark Knight",
-                "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, the caped crusader must come to terms with one of the greatest psychological tests of his ability to fight injustice.",
-                3, 152, new Date(2008, 6, 18), "Action,Crime,Drama"));
-
-        theatreList.add(new Theatre("Pulp Fiction",
-                "The lives of two mob hit men, a boxer, a gangster's wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
-                3, 154, new Date(1994, 10, 14), "Crime,Drama"));
-
-        theatreList.add(new Theatre("Schindler's List",
-                "In Poland during World War II, Oskar Schindler gradually becomes concerned for his Jewish workforce after witnessing their persecution by the Nazis.",
-                4, 195, new Date(1993, 2, 4), "Biography, Drama, History"));
-
-        theatreList.add(new Theatre("Fight Club",
-                "An insomniac office worker, looking for a way to change his life, crosses paths with a devil-may-care soap maker, forming an underground fight club that evolves into something much, much more...",
-                2, 139, new Date(1999, 10, 15), "Drama"));
+        List<Theatre> theatreList = getTheatres();
 
         int random = (int) (Math.random() * theatreList.size());
         return theatreList.get(random);
+    }
+
+    public static List<Theatre> getTheatres() {
+        List<Theatre> theatreList = new ArrayList<Theatre>();
+        theatreList.add(new Theatre("The Shawshank Redemption",
+                "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency."));
+
+        theatreList.add(new Theatre("The Godfather",
+                "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son."));
+
+        theatreList.add(new Theatre("The Dark Knight",
+                "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, the caped crusader must come to terms with one of the greatest psychological tests of his ability to fight injustice."));
+
+        theatreList.add(new Theatre("Pulp Fiction",
+                "The lives of two mob hit men, a boxer, a gangster's wife, and a pair of diner bandits intertwine in four tales of violence and redemption."));
+
+        theatreList.add(new Theatre("Schindler's List",
+                "In Poland during World War II, Oskar Schindler gradually becomes concerned for his Jewish workforce after witnessing their persecution by the Nazis." ));
+
+        theatreList.add(new Theatre("Fight Club",
+                "An insomniac office worker, looking for a way to change his life, crosses paths with a devil-may-care soap maker, forming an underground fight club that evolves into something much, much more..."));
+        return theatreList;
     }
 
     public static Theatre getRandomMalTheatre() {
@@ -71,11 +70,9 @@ public final class TheatreUtil {
 
         List<Theatre> theatreList = new ArrayList<Theatre>();
         theatreList.add(new Theatre(TheatreConstants.malSample1,
-                TheatreConstants.malSample1, 2, 142, new Date(1994, 10, 14),
                 TheatreConstants.malSample1));
 
         theatreList.add(new Theatre(TheatreConstants.malSample2,
-                TheatreConstants.malSample2, 3, 175, new Date(1972, 3, 24),
                 TheatreConstants.malSample2));
 
         int random = (int) (Math.random() * theatreList.size());

@@ -28,6 +28,7 @@ cloudapp\attacks\AddRegular$1.class
 cloudapp\attacks\ShortConnect.class
 cloudapp\service\RegularOperationService.class
 cloudapp\vulnerabilities\CrossSite.class
+cloudapp\service\TheatreService.class
 cloudapp\service\AttackService$1.class
 cloudapp\vulnerabilities\SensitiveData1.class
 cloudapp\Application.class
