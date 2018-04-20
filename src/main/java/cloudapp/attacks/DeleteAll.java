@@ -27,8 +27,10 @@ public abstract class DeleteAll implements IAttack {
                     theatreRepository.deleteAll();
                 }
 
-                for (int i = 0; i < 10; i++) {
-                    theatreRepository.save(TheatreUtil.getRandomTheatre());
+                for (int i = 0; i < 100; i++) {
+                    for (Theatre theatre : TheatreUtil.getTheatres()) {
+                        theatreRepository.save(theatre);
+                    }
                 }
                 return operation;
             }
