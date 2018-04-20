@@ -35,7 +35,7 @@ public abstract class AccessUrl implements IAttack {
     }
 
     public Operation go(Operation operation) {
-        Operation act = null;
+        Operation act = operation;
         try {
             act = vulnerability.act(operation);
         } catch (Exception e) {
