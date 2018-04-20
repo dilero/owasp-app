@@ -33,10 +33,10 @@ public class OperationService {
         buildRequestMap(theatreRepository);
     }
 
-    public void request(List<OperationType> types, OperationType operationType) {
+    public void request(List<OperationType> typeList, OperationType operationType) {
         String typeString = "";
-        for (OperationType type : types) {
-            typeString = functionMap.get(type).getBase().toString() + ";";
+        for (OperationType type : typeList) {
+            typeString = typeString + functionMap.get(type).getBase().toString() + ";";
         }
 
         Operation operation = preProcess(typeString, operationType);

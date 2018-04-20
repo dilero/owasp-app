@@ -37,7 +37,7 @@ public class AddRegular implements IRequest {
         return act;
     }
 
-
+    @Override
     public OperationBase getBase() {
         return OperationBase.ADD;
     }
