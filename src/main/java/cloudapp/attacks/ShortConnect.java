@@ -3,16 +3,11 @@ package cloudapp.attacks;
 import cloudapp.entity.ClassLabel;
 import cloudapp.entity.Operation;
 import cloudapp.entity.OperationBase;
-import cloudapp.entity.Theatre;
 import cloudapp.jpa.TheatreRepository;
-import cloudapp.utils.TheatreUtil;
-import cloudapp.vulnerabilities.IAttack;
+import cloudapp.regulars.IRequest;
 import cloudapp.vulnerabilities.IVulnerability;
 
-import java.io.IOException;
-import java.util.List;
-
-public class ShortConnect implements IAttack {
+public class ShortConnect implements IRequest {
     private final TheatreRepository theatreRepository;
     private final IVulnerability vulnerability;
 

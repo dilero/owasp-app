@@ -4,13 +4,14 @@ import cloudapp.cpumetrics.IcCpuMetrics;
 import cloudapp.entity.*;
 import cloudapp.jpa.OperationRepository;
 import cloudapp.jpa.TheatreRepository;
-import cloudapp.utils.TheatreConstants;
-import cloudapp.utils.TheatreUtil;
+import cloudapp.regulars.*;
+import cloudapp.vulnerabilities.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by z003k81p on 4/4/2018.
@@ -19,13 +20,50 @@ import java.util.List;
 public class OperationService {
 
     private final OperationRepository operationRepository;
+    private final TheatreRepository theatreRepository;
+
+    private final Map<OperationType, IRequest> functionMap = new HashMap<>();
 
     @Autowired
-    public OperationService(OperationRepository operationRepository) {
+    public OperationService(OperationRepository operationRepository, TheatreRepository theatreRepository) {
         this.operationRepository = operationRepository;
+        this.theatreRepository = theatreRepository;
+
+        buildRequestMap(theatreRepository);
     }
 
-    public Operation preProcess(String types, OperationType operationType) {
+    public void request(String types, OperationType operationType) {
+        Operation operation = preProcess(types, operationType);
+        try {
+            operation = functionMap.get(operationType).go(operation);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        save(operation);
+    }
+
+    private void buildRequestMap(TheatreRepository theatreRepository) {
+        functionMap.put(OperationType.REG_ADD, new Add(theatreRepository));
+        functionMap.put(OperationType.REG_DELETE, new Delete(theatreRepository));
+        functionMap.put(OperationType.REG_READ, new Read(theatreRepository));
+        functionMap.put(OperationType.REG_UPDATE, new Update(theatreRepository));
+
+        functionMap.put(OperationType.BAC, new BrokenAccessControl(theatreRepository));
+        functionMap.put(OperationType.BA1, new BrokenAuth1(theatreRepository));
+        functionMap.put(OperationType.BA2, new BrokenAuth2(theatreRepository));
+        functionMap.put(OperationType.CS, new CrossSite(theatreRepository));
+        functionMap.put(OperationType.IA, new InjectionA(theatreRepository));
+        functionMap.put(OperationType.IB, new InjectionB(theatreRepository));
+        functionMap.put(OperationType.InD, new InsecureDeserilization(theatreRepository));
+        functionMap.put(OperationType.InL, new InsufficientLogging(theatreRepository));
+        functionMap.put(OperationType.SM, new SecurityMisconfiuration(theatreRepository));
+        functionMap.put(OperationType.SD1, new SensitiveData1(theatreRepository));
+        functionMap.put(OperationType.SD2, new SensitiveData2(theatreRepository));
+        functionMap.put(OperationType.UC, new UsingComponents(theatreRepository));
+        functionMap.put(OperationType.XE, new XMLExternal(theatreRepository));
+    }
+
+    private Operation preProcess(String types, OperationType operationType) {
         Operation operation = new Operation();
         operation.setStartTime(System.nanoTime());
         operation.setRequestedOperations(types);
@@ -37,7 +75,7 @@ public class OperationService {
     }
 
 
-    public void save(Operation operation) {
+    private void save(Operation operation) {
         operation = cpuCalculor(operation);
         operation.setEndTime(System.nanoTime());
         long totalTime = operation.getEndTime() - operation.getStartTime();
