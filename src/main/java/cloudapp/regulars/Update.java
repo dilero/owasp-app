@@ -19,7 +19,7 @@ public class Update implements IRequest {
     @Override
     public Operation go(Operation operation) throws Exception {
         operation.setClassLabel(ClassLabel.REGULAR);
-        operation.setOperationBase(OperationBase.UPDATE);
+        operation.setOperationBase(getBase());
         List<Theatre> all = theatreRepository.findAll();
         if (all.size() > 0) {
             Theatre theatre = all.get(0);
@@ -28,5 +28,10 @@ public class Update implements IRequest {
 
         }
         return operation;
+    }
+
+    @Override
+    public OperationBase getBase() {
+        return OperationBase.UPDATE;
     }
 }

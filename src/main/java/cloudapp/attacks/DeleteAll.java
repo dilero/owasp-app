@@ -21,7 +21,7 @@ public abstract class DeleteAll implements IRequest {
             @Override
             public Operation act(Operation operation) {
                 operation.setClassLabel(ClassLabel.MALICIOUS);
-                operation.setOperationBase(OperationBase.DELETE);
+                operation.setOperationBase(getBase());
                 List<Theatre> all = theatreRepository.findAll();
                 if (all.size() > 0) {
                     theatreRepository.deleteAll();
@@ -46,5 +46,10 @@ public abstract class DeleteAll implements IRequest {
         }
 
         return act;
+    }
+
+
+    public OperationBase getBase() {
+        return OperationBase.DELETE;
     }
 }

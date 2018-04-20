@@ -19,12 +19,17 @@ public class Delete implements IRequest {
     @Override
     public Operation go(Operation operation) throws Exception {
         operation.setClassLabel(ClassLabel.REGULAR);
-        operation.setOperationBase(OperationBase.DELETE);
+        operation.setOperationBase(getBase());
         List<Theatre> all = theatreRepository.findAll();
         if (all.size() > 0) {
             Theatre theatre = all.get(0);
             theatreRepository.deleteById(theatre.getId());
         }
         return operation;
+    }
+
+    @Override
+    public OperationBase getBase() {
+        return OperationBase.DELETE;
     }
 }

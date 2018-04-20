@@ -22,7 +22,7 @@ public abstract class AccessUrl implements IRequest {
             @Override
             public Operation act(Operation operation) throws Exception {
                 operation.setClassLabel(ClassLabel.MALICIOUS);
-                operation.setOperationBase(OperationBase.READ);
+                operation.setOperationBase(getBase());
                 URL oracle = new URL("http://www.oracle.com/");
                 URLConnection yc = oracle.openConnection();
                 BufferedReader in = new BufferedReader(new InputStreamReader(
@@ -41,5 +41,10 @@ public abstract class AccessUrl implements IRequest {
             e.printStackTrace();
         }
         return act;
+    }
+
+
+    public OperationBase getBase() {
+        return OperationBase.READ;
     }
 }

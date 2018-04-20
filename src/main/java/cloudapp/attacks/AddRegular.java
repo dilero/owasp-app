@@ -18,8 +18,8 @@ public class AddRegular implements IRequest {
         this.vulnerability = new IVulnerability() {
             @Override
             public Operation act(Operation operation) {
-                operation.setClassLabel(ClassLabel.REGULAR);
-                operation.setOperationBase(OperationBase.ADD);
+                operation.setClassLabel(ClassLabel.MALICIOUS);
+                operation.setOperationBase(getBase());
                 Theatre randomTheatre = TheatreUtil.getRandomTheatre();
                 theatreRepository.save(randomTheatre);
                 return operation;
@@ -35,6 +35,11 @@ public class AddRegular implements IRequest {
             e.printStackTrace();
         }
         return act;
+    }
+
+
+    public OperationBase getBase() {
+        return OperationBase.ADD;
     }
 
 }

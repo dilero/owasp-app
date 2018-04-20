@@ -22,8 +22,6 @@ public class Operation {
     private long operationTime;
     private String requestedOperations;
     @Enumerated(EnumType.STRING)
-    private OperationType vulnerabilityName;
-    @Enumerated(EnumType.STRING)
     private OperationType operationType;
     @Enumerated(EnumType.STRING)
     private OperationBase operationBase;
@@ -132,13 +130,5 @@ public class Operation {
 
     public void setEndTime(long endTime) {
         this.endTime = endTime;
-    }
-
-    public OperationType getVulnerabilityName() {
-        return vulnerabilityName;
-    }
-
-    public void setVulnerabilityName(OperationType vulnerabilityName) {
-        this.vulnerabilityName = vulnerabilityName;
     }
 }

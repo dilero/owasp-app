@@ -19,7 +19,7 @@ public abstract class AddBigContent implements IRequest {
             @Override
             public Operation act(Operation operation) {
                 operation.setClassLabel(ClassLabel.MALICIOUS);
-                operation.setOperationBase(OperationBase.ADD);
+                operation.setOperationBase(getBase());
                 Theatre randomMalTheatre = TheatreUtil.getRandomMalTheatre();
                 theatreRepository.save(randomMalTheatre);
                 return operation;
@@ -35,5 +35,10 @@ public abstract class AddBigContent implements IRequest {
             e.printStackTrace();
         }
         return act;
+    }
+
+
+    public OperationBase getBase() {
+        return OperationBase.ADD;
     }
 }

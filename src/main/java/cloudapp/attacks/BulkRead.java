@@ -17,7 +17,7 @@ public abstract class BulkRead implements IRequest {
             @Override
             public Operation act(Operation operation) {
                 operation.setClassLabel(ClassLabel.MALICIOUS);
-                operation.setOperationBase(OperationBase.READ);
+                operation.setOperationBase(getBase());
 
                 for (int i = 0; i < 10; i++) {
                     theatreRepository.findAll();
@@ -37,5 +37,10 @@ public abstract class BulkRead implements IRequest {
         }
 
         return act;
+    }
+
+
+    public OperationBase getBase() {
+        return OperationBase.READ;
     }
 }

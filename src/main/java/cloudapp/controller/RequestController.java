@@ -19,7 +19,7 @@ public class RequestController {
     public void greeting(@RequestParam(value = "types") String types) {
         List<OperationType> operationList = OperationParser.getOperationList(types);
         for (OperationType operationType : operationList) {
-            operationService.request(types, operationType);
+            operationService.request(operationList, operationType);
         }
 
     }

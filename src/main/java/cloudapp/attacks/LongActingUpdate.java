@@ -23,7 +23,7 @@ public abstract class LongActingUpdate implements IRequest {
             @Override
             public Operation act(Operation operation) {
                 operation.setClassLabel(ClassLabel.MALICIOUS);
-                operation.setOperationBase(OperationBase.UPDATE);
+                operation.setOperationBase(getBase());
                 List<Theatre> all = theatreRepository.findAll();
                 if (all.size() > 0) {
                     Theatre theatre = all.get(0);
@@ -44,5 +44,10 @@ public abstract class LongActingUpdate implements IRequest {
         }
 
         return act;
+    }
+
+
+    public OperationBase getBase() {
+        return OperationBase.UPDATE;
     }
 }

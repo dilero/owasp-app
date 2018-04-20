@@ -17,9 +17,14 @@ public class Add implements IRequest {
     @Override
     public Operation go(Operation operation) throws Exception {
         operation.setClassLabel(ClassLabel.REGULAR);
-        operation.setOperationBase(OperationBase.ADD);
+        operation.setOperationBase(getBase());
         Theatre newTheatre = TheatreUtil.getRandomTheatre();
         theatreRepository.save(newTheatre);
         return operation;
+    }
+
+    @Override
+    public OperationBase getBase() {
+        return OperationBase.ADD;
     }
 }

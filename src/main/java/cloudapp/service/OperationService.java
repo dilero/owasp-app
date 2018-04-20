@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -32,8 +33,13 @@ public class OperationService {
         buildRequestMap(theatreRepository);
     }
 
-    public void request(String types, OperationType operationType) {
-        Operation operation = preProcess(types, operationType);
+    public void request(List<OperationType> types, OperationType operationType) {
+        String typeString = "";
+        for (OperationType type : types) {
+            typeString = functionMap.get(type).getBase().toString() + ";";
+        }
+
+        Operation operation = preProcess(typeString, operationType);
         try {
             operation = functionMap.get(operationType).go(operation);
         } catch (Exception e) {
@@ -66,9 +72,9 @@ public class OperationService {
     private Operation preProcess(String types, OperationType operationType) {
         Operation operation = new Operation();
         operation.setStartTime(System.nanoTime());
-        operation.setRequestedOperations(types);
         operation.setOperationTime(new Date().getTime());
         operation.setOperationType(operationType);
+        operation.setRequestedOperations(types);
         operation.setThreadName(Thread.currentThread().getName());
         operation = cpuCalculor(operation);
         return operation;

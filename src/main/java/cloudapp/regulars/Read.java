@@ -16,8 +16,13 @@ public class Read implements IRequest {
     @Override
     public Operation go(Operation operation) throws Exception {
         operation.setClassLabel(ClassLabel.REGULAR);
-        operation.setOperationBase(OperationBase.READ);
+        operation.setOperationBase(getBase());
         theatreRepository.findByName(TheatreUtil.ANY_NAME);
         return operation;
     }
+    @Override
+    public OperationBase getBase() {
+        return OperationBase.READ;
+    }
+
 }
