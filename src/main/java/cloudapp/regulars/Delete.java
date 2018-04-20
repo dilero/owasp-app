@@ -20,7 +20,7 @@ public class Delete implements IRequest {
     public Operation go(Operation operation) throws Exception {
         operation.setClassLabel(ClassLabel.REGULAR);
         operation.setOperationBase(OperationBase.DELETE);
-        theatreRepository.findAll()
+        List<Theatre> all = theatreRepository.findAll();
         if (all.size() > 0) {
             Theatre theatre = all.get(0);
             theatreRepository.deleteById(theatre.getId());
