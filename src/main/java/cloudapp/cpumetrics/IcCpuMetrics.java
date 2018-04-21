@@ -80,7 +80,7 @@ public final class IcCpuMetrics {
                 .getCurrentThreadUserTime();
         updateThreadCpuTime(Thread.currentThread().getId(), threadCpuTime);
         return (double) threadCpuTime / (double) (System.nanoTime() - epoch)
-                / 1000000 / cpuCount;
+                / cpuCount;
     }
 
     // public static double getThreadCpuRateAverageAmongLiveHttpThreads() {

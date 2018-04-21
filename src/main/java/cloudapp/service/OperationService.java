@@ -140,8 +140,7 @@ public class OperationService {
         operation.setCurrentThreadCpuRateAmongsLiveHttpThreads(IcCpuMetrics
                 .getCurrentThreadCpuRateAmongLiveHttpThreads());
 
-        operation.setCurrentThreadCpuRateSince(IcCpuMetrics
-                .getCurrentThreadCpuRateSince(epoch, Runtime.getRuntime().availableProcessors()));
+        operation.setCurrentThreadCpuRateSince(IcCpuMetrics.getCurrentThreadCpuRateSince(epoch, Runtime.getRuntime().availableProcessors()));
         return operation;
     }
 
