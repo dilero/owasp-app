@@ -37,7 +37,8 @@ public class RequestController {
     @GetMapping("/download")
     public ResponseEntity<InputStreamResource> downloadFile1() throws IOException {
 
-        File file = new File("data.pdf");
+        ClassLoader classLoader = getClass().getClassLoader();
+        File file = new File(classLoader.getResource("data.pdf").getFile());
         InputStreamResource resource = new InputStreamResource(new FileInputStream(file));
 
         return ResponseEntity.ok()
