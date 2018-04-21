@@ -18,6 +18,9 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 
 @RestController
@@ -37,8 +40,7 @@ public class RequestController {
     @GetMapping("/download")
     public ResponseEntity<InputStreamResource> downloadFile1() throws IOException {
 
-        ClassLoader classLoader = getClass().getClassLoader();
-        File file = new File(classLoader.getResource("data.pdf").getFile());
+        File file = Files.createFile(Paths.get("data.arff")).toFile();
         InputStreamResource resource = new InputStreamResource(new FileInputStream(file));
 
         return ResponseEntity.ok()
