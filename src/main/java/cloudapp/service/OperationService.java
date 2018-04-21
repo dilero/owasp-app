@@ -57,24 +57,24 @@ public class OperationService {
 
         try {
             file = Files.createFile(Paths.get("data.arff")).toFile();
-            FileWriter writer = new FileWriter(file);
-            writer.write("@relation thesis");
+            PrintWriter writer = new PrintWriter(file, "UTF-8");
+            writer.println("@relation thesis");
 
-            writer.write("@attribute 'class' {MALICIOUS, REGULAR}");
-            writer.write(
+            writer.println("@attribute 'class' {MALICIOUS, REGULAR}");
+            writer.println(
                     "@attribute 'CURRENTTHREADCPURATEAMONGSLIVEHTTPTHREADS' numeric");
-            writer.write("@attribute 'CURRENTTHREADCPURATESINCE' numeric");
-            writer.write(
+            writer.println("@attribute 'CURRENTTHREADCPURATESINCE' numeric");
+            writer.println(
                     "@attribute 'operationbasetype' {ADD, READ, DELETE, UPDATE}");
-            writer.write("@attribute 'operationtime' numeric");
-            writer.write("@attribute 'requestedOperationSequence' string");
-            writer.write("@data");
+            writer.println("@attribute 'operationtime' numeric");
+            writer.println("@attribute 'requestedOperationSequence' string");
+            writer.println("@data");
 
             List<Operation> operations = operationRepository.findAll();
 
             for (Operation operation : operations) {
 
-                writer.write(operation.getClassLabel() + " "
+                writer.println(operation.getClassLabel() + " "
                         + operation.getCurrentThreadCpuRateAmongsLiveHttpThreads() + " "
                         + operation.getCurrentThreadCpuRateSince() + " "
                         + operation.getOperationBase() + " "
