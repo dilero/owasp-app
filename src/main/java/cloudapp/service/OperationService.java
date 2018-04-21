@@ -1,7 +1,8 @@
 package cloudapp.service;
 
 import cloudapp.cpumetrics.IcCpuMetrics;
-import cloudapp.entity.*;
+import cloudapp.entity.Operation;
+import cloudapp.entity.OperationType;
 import cloudapp.jpa.OperationRepository;
 import cloudapp.jpa.TheatreRepository;
 import cloudapp.regulars.*;
@@ -9,6 +10,9 @@ import cloudapp.vulnerabilities.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -47,6 +51,44 @@ public class OperationService {
         }
         save(operation);
     }
+
+    public File writeToFile() {
+        File file = null;
+
+        try {
+            file = Files.createFile(Paths.get("data.arff")).toFile();
+            FileWriter writer = new FileWriter(file);
+            writer.write("@relation thesis");
+
+            writer.write("@attribute 'class' {MALICIOUS, REGULAR}");
+            writer.write(
+                    "@attribute 'CURRENTTHREADCPURATEAMONGSLIVEHTTPTHREADS' numeric");
+            writer.write("@attribute 'CURRENTTHREADCPURATESINCE' numeric");
+            writer.write(
+                    "@attribute 'operationbasetype' {ADD, READ, DELETE, UPDATE}");
+            writer.write("@attribute 'operationtime' numeric");
+            writer.write("@attribute 'requestedOperationSequence' string");
+            writer.write("@data");
+
+            List<Operation> operations = operationRepository.findAll();
+
+            for (Operation operation : operations) {
+
+                writer.write(operation.getClassLabel() + " "
+                        + operation.getCurrentThreadCpuRateAmongsLiveHttpThreads() + " "
+                        + operation.getCurrentThreadCpuRateSince() + " "
+                        + operation.getOperationBase() + " "
+                        + operation.getTime() + " "
+                        + operation.getRequestedOperations() + " ");
+            }
+
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return file;
+    }
+
 
     private void buildRequestMap(TheatreRepository theatreRepository) {
         functionMap.put(OperationType.REG_ADD, new Add(theatreRepository));

@@ -39,8 +39,8 @@ public class RequestController {
 
     @GetMapping("/download")
     public ResponseEntity<InputStreamResource> downloadFile1() throws IOException {
+        File file = operationService.writeToFile();
 
-        File file = Files.createFile(Paths.get("data.arff")).toFile();
         InputStreamResource resource = new InputStreamResource(new FileInputStream(file));
 
         return ResponseEntity.ok()
