@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4472d88b-35c0-4eb8-a246-756b791bed8f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application-db.properties" afterPath="$PROJECT_DIR$/src/main/resources/application-db.properties" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -1038,7 +1038,7 @@
       <workItem from="1524228013981" duration="15115000" />
       <workItem from="1524315435317" duration="2618000" />
       <workItem from="1524318729566" duration="87000" />
-      <workItem from="1524668098821" duration="2310000" />
+      <workItem from="1524668098821" duration="2444000" />
     </task>
     <servers />
   </component>
@@ -1054,7 +1054,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59543000" />
+    <option name="totallyTimeSpent" value="59677000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
