@@ -6,4 +6,4 @@ git commit -m "Demo"
 git push heroku master
 
 heroku logs -t
-heroku pg:psql
+heroku pg:psql HEROKU_POSTGRESQL_SILVER_URL
