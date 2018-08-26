@@ -48,8 +48,6 @@
         <start-class>cloudapp.Application</start-class>
     </properties>
 
-
-
     <build>
         <plugins>
             <plugin>
